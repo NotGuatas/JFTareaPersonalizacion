@@ -1,0 +1,6 @@
+@JFApi_HostAddress = http://localhost:5154
+
+GET {{JFApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
