@@ -14,14 +14,14 @@ namespace JFAppMaui
         private void Button_Clicked(object sender, EventArgs e)
         {
             var client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7212/api");
-            var response = client.GetAsync("JFsuplementos").Result;
+            client.BaseAddress = new Uri("https://localhost:7212/api/");
+            var response = client.GetAsync("jfsuplementos").Result;
 
             if (response.IsSuccessStatusCode)
             {
-                var JFsuplementos = response.Content.ReadAsStringAsync().Result;
-                var JFsuplementosList = JsonConvert.DeserializeObject<List<JFsuplementos>>(JFsuplementos);
-                listView.ItemsSource = JFsuplementosList;
+                var JFsuplementois = response.Content.ReadAsStringAsync().Result;
+                var JFsuplementoisList = JsonConvert.DeserializeObject<List<JFsuplementos>>(JFsuplementois);
+                listView.ItemsSource = JFsuplementoisList;
             }
 
         }
