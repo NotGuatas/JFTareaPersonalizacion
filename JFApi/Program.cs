@@ -1,4 +1,10 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using JFApi.Data;
+using JFApi.Controllers;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<JFApiContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("JFApiContext") ?? throw new InvalidOperationException("Connection string 'JFApiContext' not found.")));
 
 // Add services to the container.
 
@@ -21,5 +27,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapJFsuplementosEndpoints();
 
 app.Run();
