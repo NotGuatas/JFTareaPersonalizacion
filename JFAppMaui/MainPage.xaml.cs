@@ -1,24 +1,29 @@
-﻿namespace JFAppMaui
+﻿using JFAppMaui.Models;
+using Newtonsoft.Json;
+
+namespace JFAppMaui
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            count++;
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:7212/api");
+            var response = client.GetAsync("JFsuplementos").Result;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            if (response.IsSuccessStatusCode)
+            {
+                var JFsuplementos = response.Content.ReadAsStringAsync().Result;
+                var JFsuplementosList = JsonConvert.DeserializeObject<List<JFsuplementos>>(JFsuplementos);
+                listView.ItemsSource = JFsuplementosList;
+            }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
         }
     }
 
