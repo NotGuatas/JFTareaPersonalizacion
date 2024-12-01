@@ -63,4 +63,16 @@
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="JFApp.xaml.cs">
+	    <DependentUpon>JFApp.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="JFAppShell.xaml.cs">
+	    <DependentUpon>JFAppShell.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="JFMainPage.xaml.cs">
+	    <DependentUpon>JFMainPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>

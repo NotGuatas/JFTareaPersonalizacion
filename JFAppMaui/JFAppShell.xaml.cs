@@ -1,8 +1,8 @@
 ﻿namespace JFAppMaui
 {
-    public partial class AppShell : Shell
+    public partial class JFAppShell : Shell
     {
-        public AppShell()
+        public JFAppShell()
         {
             InitializeComponent();
         }

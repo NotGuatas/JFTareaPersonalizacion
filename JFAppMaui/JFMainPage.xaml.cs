@@ -3,10 +3,10 @@ using Newtonsoft.Json;
 
 namespace JFAppMaui
 {
-    public partial class MainPage : ContentPage
+    public partial class JFMainPage : ContentPage
     {
 
-        public MainPage()
+        public JFMainPage()
         {
             InitializeComponent();
         }
