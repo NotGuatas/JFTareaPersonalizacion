@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JFAppMaui.JFMainPage">
     <StackLayout>
-        <Label Text="Suplementos"
+        <Label Text="JFSuplementos"
                HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand"
                FontSize="Header"/>
