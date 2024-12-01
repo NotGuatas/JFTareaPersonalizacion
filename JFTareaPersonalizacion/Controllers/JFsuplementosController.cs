@@ -135,7 +135,7 @@ namespace JFTareaPersonalizacion.Controllers
         }
 
         // POST: JFsuplementos/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("JFDelete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> JFDeleteConfirmed(int id)
         {
