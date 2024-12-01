@@ -5957,7 +5957,8 @@
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = Tooltip.getOrCreateInstance(this, config);
+          const data = Tooltip.getOr
+          Instance(this, config);
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {

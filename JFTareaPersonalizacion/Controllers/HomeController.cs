@@ -15,12 +15,12 @@ namespace JFTareaPersonalizacion.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("JFIndex");
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            return View("JFPrivacy");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
